@@ -16,10 +16,6 @@ module WebsiteInformation
       def og
         @og
       end
-
-      def capture
-        "http://capture.heartrails.com/160x128/shoten?#{@url}"
-      end
     end
   end
 end
