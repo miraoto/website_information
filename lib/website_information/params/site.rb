@@ -16,6 +16,11 @@ module WebsiteInformation
       def og
         @og
       end
+
+      def capture
+        return if ENV['CAPTURE_URL'].nil?
+        "#{ENV['CAPTURE_URL']}#{@url}"
+      end
     end
   end
 end

@@ -20,6 +20,10 @@ Or install it yourself as:
 
     $ gem install website_information
 
+Please set an environment variable if you want to use site capture.
+
+    $ export CAPTURE_URL=/* site capture service url*/
+
 ## Usage
 
 ```
@@ -31,7 +35,7 @@ scraped_params.title
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/website_information. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/miraoto/website_information. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
