@@ -20,6 +20,10 @@ Or install it yourself as:
 
     $ gem install website_information
 
+Please set an environment variable if you want to use site capture.
+
+    $ export CAPTURE_URL=/* site capture service url*/
+
 ## Usage
 
 ```
