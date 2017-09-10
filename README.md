@@ -1,5 +1,7 @@
 # WebsiteInformation
 
+[![Gem Version](https://badge.fury.io/rb/website_information.svg)](https://badge.fury.io/rb/website_information) [![Code Climate](https://codeclimate.com/github/miraoto/website_information/badges/gpa.svg)](https://codeclimate.com/github/miraoto/website_information) [![MIT License](http://img.shields.io/badge/license-MIT-blue.svg?style=flat)](LICENSE) [![Build Status](https://travis-ci.org/miraoto/website_information.svg?branch=master)](https://travis-ci.org/miraoto/website_information)
+
 Scrape website information that title, meta, page capture, description, ogp and so on.
 
 ## Installation
