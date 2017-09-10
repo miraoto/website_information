@@ -1,5 +1,5 @@
 require "website_information/version"
+require "website_information/params"
 
 module WebsiteInformation
-  # Your code goes here...
 end
