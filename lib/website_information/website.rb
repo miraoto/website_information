@@ -5,6 +5,7 @@ module WebsiteInformation
     def initialize(url)
       @params = WebsiteInformation::Params::Site.new(url)
       scrape(url)
+      capture(url)
     end
 
     def scraped_params
@@ -24,6 +25,10 @@ module WebsiteInformation
       @params.og.url = doc.css('//meta[property="og:url"]/@content').to_s
       @params.og.type = doc.css('//meta[property="og:type"]/@content').to_s
       @params.og.image = doc.css('//meta[property="og:image"]/@content').to_s
+    end
+
+    def capture(url)
+      @params.capture = ENV['CAPTURE_URL'].nil? ? nil : "#{ENV['CAPTURE_URL']}#{url}"
     end
   end
 end
