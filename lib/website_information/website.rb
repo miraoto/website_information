@@ -1,7 +1,5 @@
 require 'nokogiri'
 require 'watir'
-require 'selenium-webdriver'
-require 'selenium/webdriver/chrome'
 
 module WebsiteInformation
   class Website
@@ -33,9 +31,9 @@ module WebsiteInformation
     def capture(url)
       browser = Watir::Browser.new
       browser.goto url
-      screenshot = browser.scheenshot.base64
+      capture = browser.screenshot.base64
       browser.close
-      screenshot
+      capture
     end
   end
 end
