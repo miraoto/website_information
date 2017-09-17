@@ -31,9 +31,8 @@ module WebsiteInformation
     def capture(url)
       browser = Watir::Browser.new
       browser.goto url
-      capture = browser.screenshot.base64
+      @params.capture = browser.screenshot.png
       browser.close
-      capture
     end
   end
 end

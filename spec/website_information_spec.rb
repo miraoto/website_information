@@ -17,18 +17,15 @@ RSpec.describe WebsiteInformation do
   end
 
   it "Valid extract screenshot capture" do
-    skip
-    expect(params.capture).to eq('')
+    expect(params.capture).not_to be_nil
   end
 
 
   it "Valid scraped 'meta' params" do
-    skip
     expect(params.meta.description).to eq('website_information - scrape website information that title, meta, page capture, description, ogp and so on.')
   end
 
   it "Valid scraped 'og' params" do
-    skip
     expect(params.og.site_name).to eq('GitHub')
     expect(params.og.description).to eq('website_information - scrape website information that title, meta, page capture, description, ogp and so on.')
     expect(params.og.title).to eq('miraoto/website_information')
