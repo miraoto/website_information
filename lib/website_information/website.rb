@@ -1,4 +1,5 @@
 require 'nokogiri'
+require 'watir'
 
 module WebsiteInformation
   class Website
@@ -28,7 +29,10 @@ module WebsiteInformation
     end
 
     def capture(url)
-      @params.capture = ENV['CAPTURE_URL'].nil? ? nil : "#{ENV['CAPTURE_URL']}#{url}"
+      browser = Watir::Browser.new
+      browser.goto url
+      @params.capture = browser.screenshot.png
+      browser.close
     end
   end
 end
