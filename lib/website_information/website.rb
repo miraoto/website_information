@@ -6,7 +6,6 @@ module WebsiteInformation
     def initialize(url)
       @params = WebsiteInformation::Params::Site.new(url)
       scrape(url)
-      capture(url)
     end
 
     def scraped_params
@@ -26,13 +25,6 @@ module WebsiteInformation
       @params.og.url = doc.css('//meta[property="og:url"]/@content').to_s
       @params.og.type = doc.css('//meta[property="og:type"]/@content').to_s
       @params.og.image = doc.css('//meta[property="og:image"]/@content').to_s
-    end
-
-    def capture(url)
-      browser = Watir::Browser.new
-      browser.goto url
-      @params.capture = browser.screenshot.png
-      browser.close
     end
   end
 end

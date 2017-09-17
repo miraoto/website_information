@@ -16,6 +16,16 @@ module WebsiteInformation
       def og
         @og
       end
+
+      def capture
+        if @capture.nil?
+          browser = Watir::Browser.new
+          browser.goto @url
+          @capture = browser.screenshot.png
+          browser.close
+        end
+        @capture
+      end
     end
   end
 end
