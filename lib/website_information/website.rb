@@ -25,6 +25,12 @@ module WebsiteInformation
       @params.og.url = doc.css('//meta[property="og:url"]/@content').to_s
       @params.og.type = doc.css('//meta[property="og:type"]/@content').to_s
       @params.og.image = doc.css('//meta[property="og:image"]/@content').to_s
+      feed(doc)
+    end
+
+    def feed(doc)
+      @params.feed = doc.css('//link[@rel="alternate"][@type="application/atom+xml"]/@href').to_s
+      @params.feed = doc.css('//link[@rel="alternate"][@type="application/rss+xml"]/@href').to_s if @params.feed.nil?
     end
   end
 end
