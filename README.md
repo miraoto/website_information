@@ -20,9 +20,13 @@ Or install it yourself as:
 
     $ gem install website_information
 
-Please set an environment variable if you want to use site capture.
+Please install web driver if you want to use site capture.
 
-    $ export CAPTURE_URL=/* site capture service url*/
+    # For example. In the case of MacOS
+    $ wget http://chromedriver.storage.googleapis.com/2.32/chromedriver_mac64.zip
+    $ unzip chromedriver_mac64.zip
+    $ sudo chmod u+x chromedriver
+    $ mv chromedriver /usr/local/bin
 
 ## Usage
 
