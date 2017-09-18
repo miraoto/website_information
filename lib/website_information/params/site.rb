@@ -1,7 +1,7 @@
 module WebsiteInformation
   module Params
     class Site
-      attr_accessor :url, :title, :capture
+      attr_accessor :url, :title, :capture, :feed
 
       def initialize(url)
         @url = url

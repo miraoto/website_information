@@ -16,6 +16,10 @@ RSpec.describe WebsiteInformation do
     expect(params.title).to eq('GitHub - miraoto/website_information: scrape website information that title, meta, page capture, description, ogp and so on.')
   end
 
+  it "Valid scraped 'feed' params" do
+    expect(params.feed).to eq('https://github.com/miraoto/website_information/commits/master.atom')
+  end
+
   it "Valid extract screenshot capture" do
     expect(params.capture).not_to be_nil
   end
