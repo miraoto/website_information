@@ -29,8 +29,9 @@ module WebsiteInformation
     end
 
     def feed(doc)
-      @params.feed = doc.css('//link[@rel="alternate"][@type="application/atom+xml"]/@href').to_s
-      @params.feed = doc.css('//link[@rel="alternate"][@type="application/rss+xml"]/@href').to_s if @params.feed.empty?
+      @params.feed = doc.css('//link[@rel="alternate"][@type="application/atom+xml"]/@href')[0].to_s
+      @params.feed = doc.css('//link[@rel="alternate"][@type="application/rss+xml"]/@href')[0].to_s if @params.feed.empty?
+      binding.pry
     end
   end
 end
