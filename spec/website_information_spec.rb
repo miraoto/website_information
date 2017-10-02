@@ -1,5 +1,4 @@
 require "spec_helper"
-require 'website_information/website'
 
 RSpec.describe WebsiteInformation do
   it "has a version number" do
