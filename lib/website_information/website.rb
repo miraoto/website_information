@@ -1,5 +1,4 @@
 require 'nokogiri'
-require 'watir'
 
 module WebsiteInformation
   class Website
@@ -26,6 +25,13 @@ module WebsiteInformation
       @params.og.type = doc.css('//meta[property="og:type"]/@content').to_s
       @params.og.image = doc.css('//meta[property="og:image"]/@content').to_s
       feed(doc)
+      sns(doc)
+    end
+
+    def sns(doc)
+      # scrape facebook url from page plugin (https://developers.facebook.com/docs/plugins/page-plugin/)
+      @params.sns.facebook = doc.css('//div[class$="fb-page"]/@data-href')[0].to_s
+      @params.sns.twitter = doc.css('//a[class$="twitter-timeline"]/@href')[0].to_s
     end
 
     def feed(doc)

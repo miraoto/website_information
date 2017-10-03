@@ -6,6 +6,7 @@ RSpec.describe WebsiteInformation do
   end
 
   let(:params) { WebsiteInformation::Website.new('https://github.com/miraoto/website_information').scraped_params }
+  let(:params_for_sns_case) { WebsiteInformation::Website.new('https://www.c-notes.jp/').scraped_params }
 
   it "Valid initial information for scraping" do
     expect(params.url).to eq('https://github.com/miraoto/website_information')
@@ -19,8 +20,11 @@ RSpec.describe WebsiteInformation do
     expect(params.feed).to eq('https://github.com/miraoto/website_information/commits/master.atom')
   end
 
+  let(:png_header) { "\211PNG".force_encoding('ASCII-8BIT') }
+
   it "Valid extract screenshot capture" do
     expect(params.capture).not_to be_nil
+    expect(params.capture[0..3]).to eq png_header
   end
 
 
@@ -36,4 +40,10 @@ RSpec.describe WebsiteInformation do
     expect(params.og.image).to eq('https://avatars3.githubusercontent.com/u/1483607?v=4&s=400')
     expect(params.og.type).to eq('object')
   end
+
+  it "Valid scraped 'sns' params" do
+    expect(params_for_sns_case.sns.facebook).to eq('https://www.facebook.com/chiryonote')
+    expect(params_for_sns_case.sns.twitter).to eq('https://twitter.com/chiryonote')
+  end
+
 end

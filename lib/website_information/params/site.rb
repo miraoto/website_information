@@ -1,3 +1,5 @@
+require 'watir'
+
 module WebsiteInformation
   module Params
     class Site
@@ -7,6 +9,7 @@ module WebsiteInformation
         @url = url
         @meta = WebsiteInformation::Params::Meta.new
         @og = WebsiteInformation::Params::Og.new
+        @sns = WebsiteInformation::Params::Sns.new
       end
 
       def meta
@@ -15,6 +18,10 @@ module WebsiteInformation
 
       def og
         @og
+      end
+
+      def sns
+        @sns
       end
 
       def capture
