@@ -1,4 +1,4 @@
-require 'watir'
+require 'selenium-webdriver'
 
 module WebsiteInformation
   module Params
@@ -26,9 +26,15 @@ module WebsiteInformation
 
       def capture
         if @capture.nil?
-          browser = Watir::Browser.new
-          browser.goto @url
-          @capture = browser.screenshot.png
+          # TODO if 'https://github.com/SeleniumHQ/selenium/issues/4591' pull-request merged, commit this code.
+          options = Selenium::WebDriver::Firefox::Options.new
+          options.headless!
+          browser = Selenium::WebDriver.for :firefox, options: options
+          browser.get @url
+          @capture = browser.screenshot_as(:png)
+          # browser = Watir::Browser.new :chrome
+          # browser.goto @url
+          # @capture = browser.screenshot.png
           browser.close
         end
         @capture
