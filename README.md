@@ -34,8 +34,25 @@ Please install web driver if you want to use site capture.
 scraped_params = WebsiteInformation::Website.new('scraping_url(ex. https://www.google.com)').scraped_params
 
 # ex) get website title
-scraped_params.title
+scraped_params.title # => Google
+
 ```
+
+### Output
+The list of allowed get `params` values.
+
+ * ```.title```  — ```<title>``` tag value
+ * ```.meta.description```  — ```<meta name="description"　>``` tag content
+ * ```.meta.keyword```  — ```<meta name="keyword"　>``` tag content
+ * ```.og.site_name```  — ```<meta property="og:site_name"　>``` tag content
+ * ```.og.description```  — ```<meta property="og:description"　>``` tag content
+ * ```.og.url```  — ```<meta property="og:url"　>``` tag content
+ * ```.og.type```  — ```<meta property="og:type"　>``` tag content
+ * ```.og.image```  — ```<meta property="og:image"　>``` tag content
+ * ```.feed```  — ```<link rel="alternate"　>``` tag href application/atom+xml or application/rss+xml type
+ * ```.sns.facebook```  — Facebook page plugin (https://developers.facebook.com/docs/plugins/page-plugin/) from data-href
+ * ```.sns.twitter```  — Twitter embedded timelines (https://dev.twitter.com/web/embedded-timelines/list) from href
+
 
 ## Contributing
 
