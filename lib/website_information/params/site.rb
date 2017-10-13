@@ -1,4 +1,4 @@
-require 'watir'
+require 'selenium-webdriver'
 
 module WebsiteInformation
   module Params
@@ -26,9 +26,12 @@ module WebsiteInformation
 
       def capture
         if @capture.nil?
-          browser = Watir::Browser.new
-          browser.goto @url
-          @capture = browser.screenshot.png
+          options = Selenium::WebDriver::Firefox::Options.new
+          options.add_argument('-headless')
+          # TODO if 'https://github.com/SeleniumHQ/selenium/issues/4591' pull-request merged, change above code. 'options.headless!'
+          browser = Selenium::WebDriver.for :firefox, options: options
+          browser.get @url
+          @capture = browser.screenshot_as(:png)
           browser.close
         end
         @capture

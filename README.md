@@ -20,13 +20,10 @@ Or install it yourself as:
 
     $ gem install website_information
 
-Please install web driver if you want to use site capture.
+### for site capture setting
+Please install [geckodriver](https://github.com/mozilla/geckodriver/releases)web driver if you want to use site capture.
 
-    # For example. In the case of MacOS
-    $ wget http://chromedriver.storage.googleapis.com/2.32/chromedriver_mac64.zip
-    $ unzip chromedriver_mac64.zip
-    $ sudo chmod u+x chromedriver
-    $ mv chromedriver /usr/local/bin
+see: https://developer.mozilla.org/en-US/docs/Mozilla/QA/Marionette/WebDriver#Setting_up_the_geckodriver_executable or ``` brew install geckodriver ```
 
 ## Usage
 
