@@ -37,7 +37,7 @@ RSpec.describe WebsiteInformation do
     expect(params.og.description).to eq('website_information - scrape website information that title, meta, page capture, description, ogp and so on.')
     expect(params.og.title).to eq('miraoto/website_information')
     expect(params.og.url).to eq('https://github.com/miraoto/website_information')
-    expect(params.og.image).to eq('https://avatars3.githubusercontent.com/u/1483607?v=4&s=400')
+    expect(params.og.image).to eq('https://avatars3.githubusercontent.com/u/1483607?s=400&v=4')
     expect(params.og.type).to eq('object')
   end
 
