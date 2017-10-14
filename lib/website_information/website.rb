@@ -16,7 +16,7 @@ module WebsiteInformation
     def scrape(url)
       doc = ::Nokogiri::HTML(open(url))
       @params.title = doc.title
-      @params.meta.description = doc.css('//meta[name$="description"]/@content').first.try(:value)
+      @params.meta.description = doc.css('//meta[name$="description"]/@content').to_s
       @params.meta.keyword = doc.css('//meta[name$="keyword"]/@content')
       @params.og.site_name = doc.css('//meta[property$="og:site_name"]/@content').to_s
       @params.og.description = doc.css('//meta[property="og:description"]/@content').to_s

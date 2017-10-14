@@ -23,7 +23,10 @@ Or install it yourself as:
 ### for site capture setting
 Please install [geckodriver](https://github.com/mozilla/geckodriver/releases)web driver if you want to use site capture.
 
-see: https://developer.mozilla.org/en-US/docs/Mozilla/QA/Marionette/WebDriver#Setting_up_the_geckodriver_executable or ``` brew install geckodriver ```
+1. Install geckodriver. https://github.com/mozilla/geckodriver/releases or ``` brew install geckodriver ```
+2. Setting PATH env ``` export PATH=$PATH:/path/to/geckodriver ``` and install firefox
+
+see: https://developer.mozilla.org/en-US/docs/Mozilla/QA/Marionette/WebDriver#Setting_up_the_geckodriver_executable
 
 ## Usage
 
