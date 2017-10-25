@@ -26,7 +26,8 @@ module WebsiteInformation
 
       def capture
         if @capture.nil?
-          options = Selenium::WebDriver::Chrome::Options.new
+          binary = ENV.fetch('GOOGLE_CHROME_SHIM', nil) # for heroku
+          options = Selenium::WebDriver::Chrome::Options.new(binary: binary)
           options.add_argument('--headless')
           browser = Selenium::WebDriver.for :chrome, options: options
           browser.get @url
