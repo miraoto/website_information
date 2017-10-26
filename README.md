@@ -25,6 +25,10 @@ Please install [chromedriver](https://chromedriver.storage.googleapis.com/)(webd
 
 Install chromedriver. https://chromedriver.storage.googleapis.com/  or ``` brew install chromedriver ```
 
+#### Capture in heroku
+
+If you use this gem in heroku, please install relational buildpacks (https://github.com/heroku/heroku-buildpack-chromedriver.git, https://github.com/heroku/heroku-buildpack-google-chrome.git) and your language's fontconfig to ``` ./fonts ``` 
+
 ## Usage
 
 ```
