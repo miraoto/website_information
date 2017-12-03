@@ -27,7 +27,7 @@ module WebsiteInformation
       def capture
         if @capture.nil?
           binary = ENV.fetch('GOOGLE_CHROME_BIN', nil) # for heroku
-          options = Selenium::WebDriver::Chrome::Options.new(binary: binary, args: %w{headless no-sandbox disable-gpu})
+          options = Selenium::WebDriver::Chrome::Options.new(binary: binary, args: %w{headless no-sandbox disable-gpu window-size=1280,600 hide-scrollbars})
           browser = Selenium::WebDriver.for :chrome, options: options
           begin
             browser.get @url
