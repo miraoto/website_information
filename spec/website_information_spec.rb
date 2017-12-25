@@ -16,6 +16,16 @@ RSpec.describe WebsiteInformation do
     expect(params.title).to eq('GitHub - miraoto/website_information: scrape website information that title, meta, page capture, description, ogp and so on.')
   end
 
+  it "Valid scraped 'favicon' params" do
+    expect(params.favicon).to eq('https://assets-cdn.github.com/favicon.ico')
+
+    params_for_favicon_path = WebsiteInformation::Website.new('https://rubygems.org').scraped_params
+    expect(params_for_favicon_path.favicon).to eq('https://rubygems.org/favicon.ico')
+
+    params_for_no_favicon = WebsiteInformation::Website.new('http://2ch.sc/').scraped_params
+    expect(params_for_no_favicon.favicon).to eq('http://2ch.sc/favicon.ico')
+  end
+
   it "Valid scraped 'feed' params" do
     expect(params.feed).to eq('https://github.com/miraoto/website_information/commits/master.atom')
   end

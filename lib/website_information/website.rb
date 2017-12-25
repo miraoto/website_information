@@ -24,8 +24,24 @@ module WebsiteInformation
       @params.og.url = doc.css('//meta[property="og:url"]/@content').to_s
       @params.og.type = doc.css('//meta[property="og:type"]/@content').to_s
       @params.og.image = doc.css('//meta[property="og:image"]/@content').to_s
+      favicon(doc, url)
       feed(doc)
       sns(doc)
+    end
+
+    def favicon(doc, url)
+      favicon = doc.css('//link[@rel="shortcut icon"]/@href').to_s
+      favicon = doc.css('//link[@type="image/x-icon"]/@href').to_s if favicon.empty?
+      favicon = '/favicon.ico' if favicon.empty?
+
+      require 'uri'
+      uri = URI.parse(favicon)
+      if uri.host.nil?
+        uri = URI.parse(url)
+        @params.favicon = "#{uri.scheme}://#{uri.host}#{favicon}"
+      else
+        @params.favicon = favicon
+      end
     end
 
     def feed(doc)

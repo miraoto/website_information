@@ -3,7 +3,7 @@ require 'selenium-webdriver'
 module WebsiteInformation
   module Params
     class Site
-      attr_accessor :url, :title, :capture, :feed
+      attr_accessor :url, :title, :capture, :feed, :favicon
 
       def initialize(url)
         @url = url
