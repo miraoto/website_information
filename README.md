@@ -50,6 +50,7 @@ The list of allowed get `params` values.
  * ```.og.url```  — ```<meta property="og:url"　>``` tag content
  * ```.og.type```  — ```<meta property="og:type"　>``` tag content
  * ```.og.image```  — ```<meta property="og:image"　>``` tag content
+ * ```.favicon```  — ```<link rel="shortcut icon"  　>``` tag href image/ico type
  * ```.feed```  — ```<link rel="alternate"　>``` tag href application/atom+xml or application/rss+xml type
  * ```.sns.facebook```  — Facebook page plugin (https://developers.facebook.com/docs/plugins/page-plugin/) from data-href
  * ```.sns.twitter```  — Twitter embedded timelines (https://dev.twitter.com/web/embedded-timelines/list) from href
